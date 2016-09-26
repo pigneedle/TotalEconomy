@@ -2,9 +2,13 @@
     box-sizing: border-box;
 }
 
-html, body {
+html {
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 body {
@@ -13,27 +17,72 @@ body {
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
     line-height: 1.5;
-    color: #606c71;
+    color: #67727A;
+    background-color: #F5F5F5;
+    overflow: scroll;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    opacity: 0.8;
 }
 
 .container {
+    width: 100%;
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
-    background-color: #252c3f;
+    margin: 20px 0;
 }
 
 .button {
-    border: 1px solid black;
-    border-radius: 10px;
-    width: 200px;
-    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     text-align: center;
+    border-radius: 10px;
+    width: 220px;
+    height: 70px;
+    background-color: #67727A;
+    margin-bottom: 10px;
+    position: relative;
 }
 
-.chanelog {
-    
+.button h4 {
+    font-size: 16px;
+    margin: 0;
+}
+
+h3 {
+    margin: 0 0 5px 0;
+}
+
+ul {
+    list-style: none;
+    text-align: left;
+}
+
+li:before {
+    content: "+";
+    margin-right: 4px;
+}
+
+#version, #previous-versions {
+    font-size: 14px;
+}
+
+#previous-versions {
+    margin-bottom: 10px;
+    color: #67727A;
+}
+
+#sponge-version, #forge-version {
+    font-size: 13px;
 }
