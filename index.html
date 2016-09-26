@@ -2,25 +2,45 @@
 <html lang="en-us">
     <head>
         <meta charset="UTF-8">
-        <title>Download Total Economy</title>
+        <title>Download | Total Economy</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="styles.css" media="screen">
     </head>
     <body>
         <div class="container">
-            <a href="" class="button">
-                Download
-                <br />
-                Total Economy v1.5.0
+            <a href="http://sh.st/NppAk" class="button">
+                <h4>Download Recommended</h4>
+                <div id="version">
+                    Total Economy v1.5.0
+                </div>
             </a>
-            <a href="#">Download older version</a>
+            <a id="previous-versions" href="https://github.com/Erigitic/TotalEconomy/releases">Download previous versions</a>
+
+            <h3>Tested On</h3>
+
+            <div id="sponge-version">
+                Sponge: 5.0.0-BETA-1707
+            </div>
+
+            <div id="forge-version">
+                Forge: 12.18.1.2076
+            </div>
+
             <div class="changelog">
-                CHANGELOG
+                <h2>Changelog</h2>
                 <ul>
-                    <li>Item 1</li>
-                    <li>Item 2</li>
+                    <li>Balance Top command (/balancetop, /baltop)</li>
+                	<li>Added alias for the set balance command (/setbal)</li>
+                	<li>Added a money cap that can be enabled/disabled as well as set from the main config</li>
+                	<li>Ability to set default job notifications state. Thanks to @MarkL4YG.</li>
+                	<li>Jobs config can now be reloaded without having to restart the server. (/sponge plugins reload)</li>
+                	<li>The pay command can be used to add/remove money from the console. To remove money just do "pay [NAME] -[AMOUNT]".</li>
+                	<li>Job Info command (/job info) (Displays a paginated list of everything that earns exp/money for the players current job)</li>
+                	<li>Updated to latest versions of Forge and Sponge</li>
+                	<li>CHANGE: EXP/Money is no longer rewarded for breaking blocks that a player placed. This replaces the preventJobFarming node.</li>
+                	<li>FIX: Job permissions were changed back to their normal values</li>
+                	<li>FIX: Issue with Cause.of has been fixed</li>
                 </ul>
             </div>
         </div>
