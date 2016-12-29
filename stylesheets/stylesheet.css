@@ -51,7 +51,6 @@ a:hover {
     width: 220px;
     height: 70px;
     background-color: #67727A;
-    margin-bottom: 10px;
     position: relative;
 }
 
@@ -80,6 +79,7 @@ li:before {
 
 #previous-versions {
     color: #67727A;
+    margin-bottom: 10px;
 }
 
 #sponge-version, #forge-version {
