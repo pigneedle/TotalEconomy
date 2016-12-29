@@ -79,7 +79,6 @@ li:before {
 }
 
 #previous-versions {
-    margin-bottom: 10px;
     color: #67727A;
 }
 
@@ -89,5 +88,4 @@ li:before {
 
 #patreon {
     color: #67727A;
-    font-weight: bold;
 }
