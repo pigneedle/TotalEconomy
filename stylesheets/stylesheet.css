@@ -86,3 +86,8 @@ li:before {
 #sponge-version, #forge-version {
     font-size: 13px;
 }
+
+#patreon {
+    color: #67727A;
+    font-weight: bold;
+}
