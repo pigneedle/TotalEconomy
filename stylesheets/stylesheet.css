@@ -73,7 +73,7 @@ li:before {
     margin-right: 4px;
 }
 
-#version, #previous-versions {
+.version, #previous-versions {
     font-size: 14px;
 }
 
