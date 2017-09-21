@@ -55,7 +55,7 @@ import org.spongepowered.api.event.block.ChangeBlockEvent;
 import org.spongepowered.api.event.block.InteractBlockEvent;
 import org.spongepowered.api.event.block.tileentity.ChangeSignEvent;
 import org.spongepowered.api.event.cause.Cause;
-import org.spongepowered.api.event.cause.NamedCause;
+import org.spongepowered.api.event.cause.EventContext;
 import org.spongepowered.api.event.cause.entity.damage.source.EntityDamageSource;
 import org.spongepowered.api.event.entity.DestructEntityEvent;
 import org.spongepowered.api.item.inventory.ItemStack;
@@ -155,7 +155,7 @@ public class JobManager {
                         BigDecimal salary = optJob.get().getSalary();
                         TEAccount playerAccount = (TEAccount) accountManager.getOrCreateAccount(player.getUniqueId()).get();
 
-                        TransactionResult result = playerAccount.deposit(totalEconomy.getDefaultCurrency(), salary, Cause.of(NamedCause.of("TotalEconomy", totalEconomy.getPluginContainer())));
+                        TransactionResult result = playerAccount.deposit(totalEconomy.getDefaultCurrency(), salary, Cause.of(EventContext.empty(), totalEconomy.getPluginContainer()));
 
                         if (result.getResult() == ResultType.SUCCESS) {
                             Map<String, String> messageValues = new HashMap<>();
@@ -776,7 +776,7 @@ public class JobManager {
                     }
 
                     addExp(player, expAmount);
-                    playerAccount.deposit(totalEconomy.getDefaultCurrency(), payAmount, Cause.of(NamedCause.of("TotalEconomy", totalEconomy.getPluginContainer())));
+                    playerAccount.deposit(totalEconomy.getDefaultCurrency(), payAmount, Cause.of(EventContext.empty(), totalEconomy.getPluginContainer()));
                     checkForLevel(player);
                 }
             }
@@ -837,7 +837,7 @@ public class JobManager {
                     }
 
                     addExp(player, expAmount);
-                    playerAccount.deposit(totalEconomy.getDefaultCurrency(), payAmount, Cause.of(NamedCause.of("TotalEconomy", totalEconomy.getPluginContainer())));
+                    playerAccount.deposit(totalEconomy.getDefaultCurrency(), payAmount, Cause.of(EventContext.empty(), totalEconomy.getPluginContainer()));
                     checkForLevel(player);
                 }
             }
@@ -912,7 +912,7 @@ public class JobManager {
                         }
 
                         addExp(player, expAmount);
-                        playerAccount.deposit(totalEconomy.getDefaultCurrency(), payAmount, Cause.of(NamedCause.of("TotalEconomy", totalEconomy.getPluginContainer())));
+                        playerAccount.deposit(totalEconomy.getDefaultCurrency(), payAmount, Cause.of(EventContext.empty(), totalEconomy.getPluginContainer()));
                         checkForLevel(player);
                     }
                 }
@@ -983,7 +983,7 @@ public class JobManager {
                         }
 
                         addExp(player, expAmount);
-                        playerAccount.deposit(totalEconomy.getDefaultCurrency(), payAmount, Cause.of(NamedCause.of("TotalEconomy", totalEconomy.getPluginContainer())));
+                        playerAccount.deposit(totalEconomy.getDefaultCurrency(), payAmount, Cause.of(EventContext.empty(), totalEconomy.getPluginContainer()));
                         checkForLevel(player);
                     }
                 }

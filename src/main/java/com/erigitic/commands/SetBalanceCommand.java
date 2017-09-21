@@ -36,7 +36,7 @@ import org.spongepowered.api.command.args.CommandContext;
 import org.spongepowered.api.command.spec.CommandExecutor;
 import org.spongepowered.api.entity.living.player.User;
 import org.spongepowered.api.event.cause.Cause;
-import org.spongepowered.api.event.cause.NamedCause;
+import org.spongepowered.api.event.cause.EventContext;
 import org.spongepowered.api.service.economy.Currency;
 import org.spongepowered.api.service.economy.transaction.ResultType;
 import org.spongepowered.api.service.economy.transaction.TransactionResult;
@@ -109,12 +109,12 @@ public class SetBalanceCommand implements CommandExecutor {
             Optional<Currency> optCurrency = totalEconomy.getTECurrencyRegistryModule().getById("totaleconomy:" + optCurrencyName.get().toLowerCase());
 
             if (optCurrency.isPresent()) {
-                return recipientAccount.setBalance(optCurrency.get(), amount, Cause.of(NamedCause.of("TotalEconomy", totalEconomy.getPluginContainer())));
+                return recipientAccount.setBalance(optCurrency.get(), amount, Cause.of(EventContext.empty(), totalEconomy.getPluginContainer()));
             } else {
                 throw new CommandException(Text.of(TextColors.RED, "[TE] The specified currency does not exist!"));
             }
         } else {
-            return recipientAccount.setBalance(defaultCurrency, amount, Cause.of(NamedCause.of("TotalEconomy", totalEconomy.getPluginContainer())));
+            return recipientAccount.setBalance(defaultCurrency, amount, Cause.of(EventContext.empty(), totalEconomy.getPluginContainer()));
         }
     }
 }

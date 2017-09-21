@@ -37,7 +37,7 @@ import org.spongepowered.api.command.args.CommandContext;
 import org.spongepowered.api.command.spec.CommandExecutor;
 import org.spongepowered.api.entity.living.player.User;
 import org.spongepowered.api.event.cause.Cause;
-import org.spongepowered.api.event.cause.NamedCause;
+import org.spongepowered.api.event.cause.EventContext;
 import org.spongepowered.api.service.economy.Currency;
 import org.spongepowered.api.service.economy.transaction.ResultType;
 import org.spongepowered.api.service.economy.transaction.TransactionResult;
@@ -98,14 +98,14 @@ public class ViewBalanceCommand implements CommandExecutor {
                 TECurrency currency = (TECurrency) optCurrency.get();
                 BigDecimal balance = recipientAccount.getBalance(currency);
 
-                return recipientAccount.setBalance(currency, balance, Cause.of(NamedCause.of("TotalEconomy", totalEconomy.getPluginContainer())));
+                return recipientAccount.setBalance(currency, balance, Cause.of(EventContext.empty(), totalEconomy.getPluginContainer()));
             } else {
                 throw new CommandException(Text.of(TextColors.RED, "[TE] The specified currency does not exist!"));
             }
         } else {
             BigDecimal balance = recipientAccount.getBalance(totalEconomy.getDefaultCurrency());
 
-            return recipientAccount.setBalance(totalEconomy.getDefaultCurrency(), balance, Cause.of(NamedCause.of("TotalEconomy", totalEconomy.getPluginContainer())));
+            return recipientAccount.setBalance(totalEconomy.getDefaultCurrency(), balance, Cause.of(EventContext.empty(), totalEconomy.getPluginContainer()));
         }
     }
 }
